@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Héroes — Revive la Batalla de Maipú</title>
+
+  <!-- Model Viewer -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer@4.1.0/dist/model-viewer.min.js"></script>
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:#faf9f7; --card:#fff; --muted:#6b7280; --ink:#11263a; --brand:#1f3d5a; --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+
+    /* Header / Menú */
+    .header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e7e5e4;z-index:20}
+    .inner{max-width:1100px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;gap:14px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--brand)}
+    .brand img{width:28px;height:28px;border-radius:8px;display:block}
+    .nav{margin-left:auto;display:flex;gap:22px}
+    .nav a{color:var(--brand);text-decoration:none;font-weight:600}
+    .nav a:hover{text-decoration:underline}
+
+    /* Layout */
+    .wrap{max-width:1100px;margin:0 auto;padding:18px}
+    h1{margin:.7rem 0 0}
+    .muted{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:18px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+
+    /* Cards y visor */
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+    .card h2{margin:.2rem 0 .4rem}
+    model-viewer{width:100%;height:480px;border-radius:var(--radius);background:#f4f2ee}
+    .bar{display:flex;gap:10px;margin-top:10px}
+    .btn{appearance:none;border:1px solid var(--brand);background:var(--brand);color:#fff;border-radius:10px;padding:10px 14px;font-weight:600;cursor:pointer}
+    .btn.alt{background:#fff;color:var(--brand)}
+    footer{margin:28px 0 40px;text-align:center;color:var(--muted)}
+  </style>
+</head>
+<body>
+
+  <!-- MENÚ SUPERIOR -->
+  <header class="header">
+    <div class="inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Revive Maipú">
+        <span>Revive Maipú</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="objetos.html">Objetos</a>
+        <a href="simulador.html">Simulador</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="wrap">
+    <h1>Héroes de la Batalla de Maipú</h1>
+    <p class="muted">Explora en 3D a los protagonistas. Usa el mouse o tus dedos para rotar y acercar.</p>
+
+    <section class="grid">
+      <!-- SAN MARTÍN -->
+      <article class="card">
+        <h2>José de San Martín</h2>
+        <p class="muted">Comandante del Ejército de los Andes; coordinó la maniobra conjunta que aseguró la victoria.</p>
+
+        <model-viewer
+          id="mvSanMartin"
+          src="Heroes/SanMartin/base_basic_pbr.glb"
+          alt="Modelo 3D de José de San Martín"
+          camera-controls
+          camera-orbit="180deg 85deg auto"
+          field-of-view="28deg"
+          auto-rotate
+          shadow-intensity="0.7"
+          exposure="1.1"
+          ar
+          ar-modes="webxr scene-viewer quick-look">
+        </model-viewer>
+
+        <div class="bar">
+          <button class="btn" onclick="document.getElementById('mvSanMartin').resetTurntableRotation()">Centrar</button>
+          <button class="btn alt" onclick="document.getElementById('mvSanMartin').turntableRotation+=45">Girar 45°</button>
+        </div>
+      </article>
+
+      <!-- O’HIGGINS -->
+      <article class="card">
+        <h2>Bernardo O’Higgins</h2>
+        <p class="muted">Director Supremo de Chile; reforzó la ofensiva y elevó la moral de las tropas en el campo de Maipú.</p>
+
+        <model-viewer
+          id="mvOHiggins"
+          src="Heroes/Ohiggins/base_basic_pbr.glb"
+          alt="Modelo 3D de Bernardo O’Higgins"
+          camera-controls
+          camera-orbit="180deg 85deg auto"
+          field-of-view="28deg"
+          auto-rotate
+          shadow-intensity="0.7"
+          exposure="1.1"
+          ar
+          ar-modes="webxr scene-viewer quick-look">
+        </model-viewer>
+
+        <div class="bar">
+          <button class="btn" onclick="document.getElementById('mvOHiggins').resetTurntableRotation()">Centrar</button>
+          <button class="btn alt" onclick="document.getElementById('mvOHiggins').turntableRotation+=45">Girar 45°</button>
+        </div>
+      </article>
+    </section>
+
+    <footer>Revive Maipú — Prototipo interactivo</footer>
+  </main>
+
+</body>
+</html>

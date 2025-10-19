@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Objetos Históricos — Revive Maipú</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:#faf9f7; --card:#ffffff; --muted:#6b7280; --ink:#11263a; --brand:#1f3d5a; --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+
+    /* Header */
+    .header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e7e5e4;z-index:20}
+    .inner{max-width:1100px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--brand);text-decoration:none}
+    .brand img{width:28px;height:28px;border-radius:8px;display:block}
+    .nav{margin-left:auto;display:flex;gap:22px}
+    .nav a{color:var(--brand);text-decoration:none;font-weight:600}
+    .nav a:hover{text-decoration:underline}
+
+    /* Contenido */
+    .wrap{max-width:1100px;margin:0 auto;padding:22px 18px}
+    h1{font-size:2rem;margin-bottom:20px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    @media(max-width:800px){.grid{grid-template-columns:1fr}}
+
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+    .card h2{margin-top:0}
+    figure{margin:14px 0 10px;background:#f4f2ee;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+    figure img{width:100%;display:block}
+    figcaption{font-size:.9rem;color:var(--muted);padding:8px 12px}
+
+    .btn{background:var(--brand);color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:600}
+    .btn:hover{background:#2b527b}
+
+    footer{margin:28px 0 40px;text-align:center;color:var(--muted)}
+  </style>
+</head>
+<body>
+
+  <!-- Menú -->
+  <header class="header">
+    <div class="inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Revive Maipú">
+        <span>Revive Maipú</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="objetos.html">Objetos</a>
+        <a href="simulador.html">Simulador</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Objetos históricos de la Batalla de Maipú</h1>
+    <p class="muted">
+      Estos elementos formaron parte del contexto militar y simbólico de la Batalla de Maipú, contribuyendo al desarrollo de la contienda y a la identidad de los combatientes patriotas.
+    </p>
+
+    <section class="grid">
+      <!-- Arcabuz -->
+      <article class="card">
+        <h2>Arcabuz</h2>
+        <figure>
+          <img src="Objetos/Arcabuz.jpg" alt="Arcabuz utilizado en la batalla de Maipú" loading="lazy">
+          <figcaption>El arcabuz era un arma de fuego empleada por las tropas en las primeras etapas de la batalla.</figcaption>
+        </figure>
+        <p>Arma de fuego de avancarga utilizada por la infantería. Su alcance limitado obligaba a un combate relativamente cercano, acompañando las líneas iniciales de fuego.</p>
+        <button class="btn">🔊 Reproducir audio</button>
+      </article>
+
+      <!-- Sable -->
+      <article class="card">
+        <h2>Sable</h2>
+        <figure>
+          <img src="Objetos/Sable.jpg" alt="Sable de caballería utilizado en Maipú" loading="lazy">
+          <figcaption>El sable era símbolo de mando y herramienta de combate cuerpo a cuerpo.</figcaption>
+        </figure>
+        <p>El sable fue un arma fundamental para la caballería patriota, usada en cargas rápidas y maniobras de flanqueo durante los combates decisivos.</p>
+        <button class="btn">🔊 Reproducir audio</button>
+      </article>
+
+      <!-- Uniforme -->
+      <article class="card">
+        <h2>Uniforme</h2>
+        <figure>
+          <img src="Objetos/Uniforme batalla de maipu.jpg" alt="Uniforme militar de la Batalla de Maipú" loading="lazy">
+          <figcaption>Uniforme con simbología patriota y jerarquías claramente visibles.</figcaption>
+        </figure>
+        <p>Los uniformes distinguían rangos y unidades, reforzando la identidad del ejército libertador. Colores y símbolos reflejaban la causa patriota y el orden táctico.</p>
+        <button class="btn">🔊 Reproducir audio</button>
+      </article>
+    </section>
+
+    <footer>
+      Revive Maipú — Patrimonio histórico
+    </footer>
+  </main>
+</body>
+</html>

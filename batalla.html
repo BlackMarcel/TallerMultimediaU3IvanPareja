@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Batalla de Maipú — Relato</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#faf9f7; --card:#fff; --muted:#6b7280; --ink:#11263a; --brand:#1f3d5a; --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Arial,sans-serif;line-height:1.6}
+    /* Header */
+    .header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e7e5e4;z-index:20}
+    .inner{max-width:1100px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--brand);text-decoration:none}
+    .brand img{width:28px;height:28px;border-radius:8px;display:block}
+    .nav{margin-left:auto;display:flex;gap:22px}
+    .nav a{color:var(--brand);text-decoration:none;font-weight:600}
+    .nav a:hover{text-decoration:underline}
+    /* Main */
+    .wrap{max-width:1100px;margin:0 auto;padding:22px 18px}
+    h1{font-size:2rem;margin:.5rem 0 1rem}
+    h2{margin:2rem 0 .5rem}
+    .lead{color:var(--muted);margin-bottom:1.25rem}
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+    figure{margin:18px 0;background:#f4f2ee;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+    figure img{width:100%;display:block}
+    figcaption{font-size:.95rem;color:var(--muted);padding:10px 14px}
+    .aside{background:#f2f7ff;border:1px solid #d7e6ff;color:#143a66;border-radius:12px;padding:14px;margin:18px 0}
+    .footer{margin:28px 0 40px;text-align:center;color:var(--muted)}
+  </style>
+</head>
+<body>
+
+  <!-- MENÚ (sin “Mapa”) -->
+  <header class="header">
+    <div class="inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Revive Maipú">
+        <span>Revive Maipú</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="objetos.html">Objetos</a>
+        <a href="simulador.html">Simulador</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>La Batalla de Maipú — Síntesis narrativa</h1>
+    <p class="lead">
+      El 5 de abril de 1818, en la llanura de Maipú (cerca de Santiago), las fuerzas patriotas al mando de
+      <strong>José de San Martín</strong> y con el apoyo de <strong>Bernardo O’Higgins</strong> derrotaron al ejército realista.
+      A continuación, el relato de cómo se desarrolló la jornada.
+    </p>
+
+    <!-- 1. Amanecer y despliegue -->
+    <section class="card">
+      <h2>1) Amanecer y despliegue</h2>
+      <p>
+        Con las primeras luces, ambos ejércitos toman posiciones. Los <em>patriotas</em> organizan su línea con
+        infantería al centro y caballería en los flancos, apoyados por artillería. El terreno ligeramente ondulado
+        ofrece puntos clave para la maniobra y el fuego.
+      </p>
+      <figure>
+        <img src="Batalla/home-corebanner_mural.jpg" alt="Composición mural alusiva a los protagonistas de Maipú" loading="lazy">
+        <figcaption>Iconografía heroica: la gesta independentista como marco del enfrentamiento en Maipú.</figcaption>
+      </figure>
+    </section>
+
+    <!-- 2. Primeros choques -->
+    <section class="card">
+      <h2>2) Primeros choques y fuego de artillería</h2>
+      <p>
+        La artillería abre el combate; la infantería avanza a paso sostenido. Los <em>realistas</em> buscan fijar
+        el centro patriota mientras tantean por los flancos. El intercambio inicial define sectores calientes del frente.
+      </p>
+      <figure>
+        <img src="Batalla/Batallademaipu(2).jpg" alt="Ilustración de la batalla de Maipú con líneas de fuego" loading="lazy">
+        <figcaption>Representación histórica de los choques iniciales y el empleo de artillería en campo abierto.</figcaption>
+      </figure>
+    </section>
+
+    <!-- 3. Maniobra y contraataque -->
+    <section class="card">
+      <h2>3) Maniobra decisiva y contraataque patriota</h2>
+      <p>
+        Al identificar la presión realista en sectores del centro, el mando patriota ordena maniobras de
+        <strong>flanqueo</strong>. La caballería actúa para desordenar las formaciones enemigas y abrir brechas.
+        Aprovechando la oportunidad, la infantería patriota ejecuta un <strong>contraataque</strong> coordinado.
+      </p>
+      <div class="aside">
+        <strong>Momento crítico:</strong> la combinación de fuego y movimiento quiebra la cohesión realista;
+        el dispositivo patriota ocupa posiciones dominantes.
+      </div>
+      <figure>
+        <img src="Batalla/BatallaDeMaipu.jpg" alt="Grabado alusivo a la victoria en Maipú" loading="lazy">
+        <figcaption>Avance patriota y ruptura de la línea realista hacia el tramo final del combate.</figcaption>
+      </figure>
+    </section>
+
+    <!-- 4. Remate y consecuencias -->
+    <section class="card">
+      <h2>4) Ruptura final y consolidación de la victoria</h2>
+      <p>
+        Con la línea realista rota y sus unidades en retirada, el campo queda bajo control patriota.
+        La victoria en Maipú asegura la independencia de Chile y consolida la proyección estratégica
+        del Ejército de los Andes para la campaña libertadora.
+      </p>
+      <ul>
+        <li><strong>Despliegue eficaz</strong> de armas combinadas (infantería, artillería, caballería).</li>
+        <li><strong>Oportunidad táctica</strong> en el contraataque y la explotación del flanco.</li>
+        <li><strong>Resultado</strong>: retirada realista y estabilidad política en la región central.</li>
+      </ul>
+    </section>
+
+    <p class="footer">Revive Maipú — Relato histórico</p>
+  </main>
+
+</body>
+</html>

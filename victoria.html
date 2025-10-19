@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>¿Cómo se logró la victoria? — Revive Maipú</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#faf9f7;--card:#ffffff;--ink:#11263a;--muted:#6b7280;--brand:#1f3d5a;--radius:16px}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Arial,sans-serif;line-height:1.6}
+
+    /* Header */
+    .header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e7e5e4;z-index:20}
+    .inner{max-width:1100px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--brand);text-decoration:none}
+    .brand img{width:28px;height:28px;border-radius:8px;display:block}
+    .nav{margin-left:auto;display:flex;gap:22px}
+    .nav a{color:var(--brand);text-decoration:none;font-weight:600}
+    .nav a:hover{text-decoration:underline}
+
+    /* Layout */
+    .wrap{max-width:1100px;margin:0 auto;padding:22px 18px}
+    h1{font-size:2rem;margin:.6rem 0 1rem}
+    h2{margin:1.6rem 0 .6rem}
+    .lead{color:var(--muted);margin-bottom:1.2rem}
+
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+    figure{margin:18px 0;background:#f4f2ee;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+    figure img{width:100%;display:block}
+    figcaption{padding:10px 14px;color:var(--muted);font-size:.95rem}
+    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+
+    ul.kpis{margin:.3rem 0 0;padding-left:1.2rem}
+    .pill{display:inline-block;background:#eef3ff;color:#143a66;border:1px solid #cfe0ff;padding:6px 10px;border-radius:999px;font-weight:600;margin:4px 6px 0 0}
+    footer{margin:28px 0 40px;text-align:center;color:var(--muted)}
+  </style>
+</head>
+<body>
+
+  <!-- MENÚ (sin Mapa) -->
+  <header class="header">
+    <div class="inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Revive Maipú">
+        <span>Revive Maipú</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="objetos.html">Objetos</a>
+        <a href="simulador.html">Simulador</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>¿Cómo se logró la victoria?</h1>
+
+    <div class="grid">
+      <!-- Columna texto -->
+      <section>
+        <ol>
+          <li><strong>Coordinación de mandos:</strong> planeamiento estratégico unificado (San Martín) y conducción en el terreno con refuerzos decisivos (O’Higgins).</li>
+          <li><strong>Manejo del terreno:</strong> elección de posiciones con dominio visual y artillería eficaz; líneas flexibles para absorber y responder al choque.</li>
+          <li><strong>Flanqueos oportunos:</strong> empleo de caballería y reservas para desorganizar la línea realista y abrir brechas en el momento crítico.</li>
+          <li><strong>Impulso moral y logística:</strong> reagrupamientos rápidos, reposición de munición y elevación de la moral de combate tras la llegada de refuerzos.</li>
+        </ol>
+
+        <h2>Claves tácticas complementarias</h2>
+        <ul class="kpis">
+          <li class="pill">Armas combinadas</li>
+          <li class="pill">Reserva móvil</li>
+          <li class="pill">Contraataque sincronizado</li>
+          <li class="pill">Dominio de alturas</li>
+        </ul>
+
+        <h2>Resultados y proyección</h2>
+        <p class="lead">
+          La ruptura de la línea realista, seguida de su retirada, aseguró la independencia de Chile y fortaleció la
+          campaña libertadora en el Pacífico sur. Maipú se convirtió en un hito político, militar y simbólico de la
+          causa americana.
+        </p>
+      </section>
+
+      <!-- Columna imagen -->
+      <aside>
+        <figure>
+          <img src="abrazo.jpeg" alt="El Abrazo de Maipú entre San Martín y O’Higgins">
+          <figcaption>
+            <strong>El Abrazo de Maipú</strong>: gesto de reconocimiento entre San Martín y O’Higgins tras la victoria,
+            símbolo de unidad y de la consolidación del proceso independentista.
+          </figcaption>
+        </figure>
+        <div class="card">
+          <h2>Significado histórico</h2>
+          <p>
+            El abrazo selló una alianza política-militar que dio estabilidad a la región central y legitimó el nuevo
+            orden republicano. Desde entonces, Maipú es memoria de cooperación continental y de disciplina operativa
+            puesta al servicio de la independencia.
+          </p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>Revive Maipú — Victoria y memoria histórica</footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simulador táctico — Revive Maipú</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:#faf9f7; --card:#ffffff; --muted:#6b7280; --ink:#11263a; --brand:#1f3d5a; --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+
+    /* Header */
+    .header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e7e5e4;z-index:20}
+    .inner{max-width:1100px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--brand);text-decoration:none}
+    .brand img{width:28px;height:28px;border-radius:8px;display:block}
+    .nav{margin-left:auto;display:flex;gap:22px}
+    .nav a{color:var(--brand);text-decoration:none;font-weight:600}
+    .nav a:hover{text-decoration:underline}
+
+    /* Contenido */
+    .wrap{max-width:1100px;margin:0 auto;padding:22px 18px}
+    h1{font-size:2rem;margin-bottom:20px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    @media(max-width:800px){.grid{grid-template-columns:1fr}}
+
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+    .card h2{margin-top:0}
+    .btn{background:var(--brand);color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:600}
+    .btn:hover{background:#2b527b}
+
+    /* Imagen VR */
+    .vr-section{text-align:center;margin-bottom:28px}
+    .vr-section img{max-width:100%;border-radius:var(--radius);box-shadow:0 4px 14px rgba(0,0,0,0.1)}
+    .vr-section p{color:var(--muted);max-width:700px;margin:14px auto 0;font-size:1rem}
+
+    .mapa-img{width:100%;border-radius:var(--radius);box-shadow:0 4px 14px rgba(0,0,0,0.1)}
+    .mapa-caption{color:var(--muted);font-size:0.9rem;margin-top:8px;text-align:center}
+  </style>
+</head>
+<body>
+
+  <!-- MENÚ -->
+  <header class="header">
+    <div class="inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Revive Maipú">
+        <span>Revive Maipú</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="objetos.html">Objetos</a>
+        <a href="simulador.html">Simulador</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- Sección VR -->
+    <div class="vr-section">
+      <img src="VR.jpg" alt="Experiencia VR de la Batalla de Maipú">
+      <p>
+        Vive la <strong>Batalla de Maipú</strong> en una experiencia inmersiva de realidad virtual.  
+        Observa las formaciones tácticas, las maniobras y revive la historia como si estuvieras allí.
+      </p>
+    </div>
+
+    <!-- Simulador táctico + mapa -->
+    <div class="grid">
+      <section class="card">
+        <h2>Simulador táctico</h2>
+        <p>Selecciona una estrategia para visualizar un resultado textual (prototipo). En producción, esto controlará una animación en el mapa.</p>
+        <form id="simuladorForm">
+          <label><input type="radio" name="estrategia" value="Flanqueo por la derecha"> Flanqueo por la derecha</label><br>
+          <label><input type="radio" name="estrategia" value="Avance frontal"> Avance frontal</label><br>
+          <label><input type="radio" name="estrategia" value="Formación defensiva"> Formación defensiva</label><br><br>
+          <button type="button" class="btn" onclick="simular()">Simular</button>
+        </form>
+        <div id="resultado" style="margin-top:12px;color:var(--muted)">Resultado aquí...</div>
+      </section>
+
+      <section class="card">
+        <h2>Mapa</h2>
+        <img src="MapaBatalla.jpg" alt="Mapa de la Batalla de Maipú" class="mapa-img">
+        <div class="mapa-caption">Representación táctica de posiciones y maniobras durante la Batalla de Maipú.</div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    function simular() {
+      const estrategia = document.querySelector('input[name="estrategia"]:checked');
+      const resultado = document.getElementById('resultado');
+      if (!estrategia) {
+        resultado.textContent = "Selecciona una estrategia para simular.";
+        return;
+      }
+      switch (estrategia.value) {
+        case "Flanqueo por la derecha":
+          resultado.textContent = "La caballería patriota flanquea por el ala derecha, rompiendo la formación realista.";
+          break;
+        case "Avance frontal":
+          resultado.textContent = "Las líneas patriotas avanzan de frente, generando un choque central con alto costo pero empuje decisivo.";
+          break;
+        case "Formación defensiva":
+          resultado.textContent = "Las fuerzas patriotas refuerzan el centro y flancos, conteniendo el ataque realista y preparando el contraataque.";
+          break;
+      }
+    }
+  </script>
+
+</body>
+</html>
+

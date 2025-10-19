@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Revive la Batalla de Maipú</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#faf9f7; --panel:#f4f2ee; --ink:#11263a; --muted:#6b7280;
+      --brand:#1f3d5a; --radius:18px; --shadow:0 6px 20px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Arial,sans-serif}
+    a{color:inherit}
+
+    /* Header */
+    .header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e7e5e4;z-index:50}
+    .inner{max-width:1100px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--brand);text-decoration:none}
+    .brand img{width:28px;height:28px;border-radius:8px;display:block}
+    .nav{margin-left:auto;display:flex;gap:22px}
+    .nav a{color:var(--brand);text-decoration:none;font-weight:600}
+    .nav a:hover{text-decoration:underline}
+    /* Burger */
+    .menu-btn{display:none;margin-left:auto;background:#fff;border:1px solid #dcdad7;border-radius:10px;padding:8px 10px;font-size:20px;line-height:1;cursor:pointer}
+    @media (max-width:800px){
+      .nav{display:none;position:absolute;top:56px;right:12px;background:#fff;border:1px solid #e7e5e4;border-radius:12px;box-shadow:var(--shadow);padding:10px 12px;flex-direction:column;gap:10px}
+      .nav.open{display:flex}
+      .menu-btn{display:inline-block}
+    }
+
+    /* Layout */
+    .wrap{max-width:1100px;margin:0 auto;padding:26px 18px}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+    h1{font-size:clamp(1.8rem, 2.5vw + 1rem, 2.6rem);line-height:1.15;margin:.2rem 0 1rem}
+    .lead{color:var(--muted);margin-bottom:18px;font-size:clamp(1rem, .4vw + .9rem, 1.1rem)}
+
+    .btn{appearance:none;border:1px solid var(--brand);background:var(--brand);color:#fff;
+         font-weight:700;border-radius:12px;padding:12px 16px;cursor:pointer;display:inline-block}
+    .btn.secondary{background:#fff;color:var(--brand)}
+    .cta-row{display:flex;flex-wrap:wrap;gap:10px}
+
+    /* Panel tarjetas */
+    .panel{background:var(--panel);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+    @media (max-width:960px){.tiles{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.tiles{grid-template-columns:1fr}}
+    .tile{background:#fff;border-radius:16px;padding:16px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+    .icon{width:100%;max-width:120px;aspect-ratio:1/1;border-radius:999px;background:#1f3d5a;margin:0 auto 10px;
+          display:grid;place-items:center;color:#fff;font-size:56px}
+    .tile a{display:block;color:#1f3d5a;font-weight:800;text-decoration:underline}
+
+    /* Imagen hero opcional responsiva */
+    .hero-fig{border-radius:16px;overflow:hidden;background:#eae7e3}
+    .hero-fig img{display:block;width:100%;height:auto}
+  </style>
+</head>
+<body>
+
+  <!-- MENÚ (sin “Mapa”) -->
+  <header class="header">
+    <div class="inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Revive Maipú">
+        <span>Revive Maipú</span>
+      </a>
+      <button id="menuBtn" class="menu-btn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <nav id="nav" class="nav" aria-label="Principal">
+        <a href="index.html">Inicio</a>
+        <a href="objetos.html">Objetos</a>
+        <a href="simulador.html">Simulador</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <!-- Columna izquierda -->
+      <div>
+        <h1>Revive la Batalla de Maipú</h1>
+        <p class="lead">
+          Bienvenido a la interfaz del <strong>Museo Votivo de Maipú</strong>. Explora a los héroes, conoce
+          los objetos que acompañaron la gesta y vive la experiencia en realidad virtual. Este prototipo reúne
+          narrativa histórica, multimedia y modelos 3D para que recorras de forma inmersiva uno de los hitos
+          decisivos de la independencia.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="simulador.html">Ver realidad virtual</a>
+          <a class="btn secondary" href="https://www.youtube.com/watch?v=KhrLh3beftw" target="_blank" rel="noopener">▶ Narración</a>
+        </div>
+      </div>
+
+      <!-- Columna derecha: panel + tiles -->
+      <div class="panel">
+        <!-- (El botón “EMPEZAR” fue eliminado) -->
+        <div class="tiles">
+          <div class="tile">
+            <div class="icon">👤</div>
+            <a href="heroes.html">HÉROES</a>
+          </div>
+          <div class="tile">
+            <div class="icon">⚔️</div>
+            <a href="batalla.html">BATALLA</a>
+          </div>
+          <div class="tile">
+            <div class="icon">🏁</div>
+            <a href="victoria.html">VICTORIA</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Menú hamburguesa móvil
+    const menuBtn = document.getElementById('menuBtn');
+    const nav = document.getElementById('nav');
+    menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+    });
+  </script>
+</body>
+</html>
